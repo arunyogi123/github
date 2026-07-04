@@ -1,0 +1,87 @@
+# Creating a New Branch and Making a Pull Request
+
+## 1. Check Current Branch
+
+
+git branch
+
+Output:
+* main
+
+
+`*` indicates your current branch.
+
+---
+
+
+## 2. Create a New Branch
+
+git branch branch_name
+
+
+Check the branches again:
+
+git branch
+
+
+Output:
+
+
+* main
+  branch_name
+
+
+
+## 3. Switch to the New Branch
+
+git checkout branch_name
+
+
+Check again:
+
+git branch
+
+
+Output:
+
+  main
+* branch_name
+
+
+Now you are working on `branch_name`.
+
+---
+
+
+## 4. Add, Commit, and Push Changes
+
+git add .
+git commit -m "Your commit message"
+git push origin branch_name
+
+Example:
+
+git commit -m "Added donation form feature"
+
+
+---
+
+# Creating a Pull Request on GitHub
+
+Github account
+main
+click on branch_name
+pull request
+new pull request
+branch_name
+create pull request
+again create pull request
+
+---
+
+
+# Requesting a Review
+
+1. On the right side of the Pull Request page, find **Reviewers**.
+2. Click **Request** next to the developer's name.
+3. The reviewer can now check your code and approve or suggest changes.

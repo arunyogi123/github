@@ -1,0 +1,100 @@
+# Git Rebase Workflow
+
+## 1. Switch to Your Working Branch
+
+```bash
+git checkout branch_name
+```
+
+---
+
+## 2. Get the Latest Changes from GitHub
+
+```bash
+git checkout main
+git pull origin main
+```
+
+This updates your local `main` branch.
+
+---
+
+## 3. Switch Back to Your Branch
+
+```bash
+git checkout branch_name
+```
+
+---
+
+## 4. Rebase Your Branch onto Main
+
+```bash
+git rebase main
+```
+
+This moves your branch's commits on top of the latest `main` branch.
+
+---
+
+## 5. If There Are Merge Conflicts
+
+Check the conflicted files:
+
+```bash
+git status
+```
+
+Fix the conflicts in the files, then run:
+
+```bash
+git add .
+git rebase --continue
+```
+
+If more conflicts appear, repeat the same steps.
+
+---
+
+## 6. Cancel the Rebase (Optional)
+
+If you want to stop the rebase and return to the previous state:
+
+```bash
+git rebase --abort
+```
+
+---
+
+## 7. Push the Rebased Branch
+
+Since the commit history has changed, use:
+
+```bash
+git push --force-with-lease origin branch_name
+```
+
+---
+
+# Complete Rebase Workflow
+
+```bash
+git checkout main
+git pull origin main
+
+git checkout branch_name
+git rebase main
+
+# If conflicts occur
+git add .
+git rebase --continue
+
+# Push after rebase
+git push --force-with-lease origin branch_name
+```
+
+---
+
+# Simple Flow
+
+**Update main → Switch to your branch → Rebase → Fix conflicts (if any) → Push the branch again.**

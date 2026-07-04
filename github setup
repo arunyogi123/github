@@ -1,0 +1,72 @@
+# GitHub SSH Setup and First Push
+
+## 1. Generate SSH Key
+Open Command Prompt and run:
+
+ssh-keygen
+
+This generates two files:
+
+* **Private Key:** `id_rsa`
+* **Public Key:** `id_rsa.pub`
+
+
+## 2. Add SSH Key to GitHub
+
+1. Open GitHub.
+2. Go to **Settings** → **SSH and GPG Keys**.
+3. Click **New SSH Key**.
+4. Copy the contents of `id_rsa.pub` and paste it.
+5. Save the key.
+
+---
+
+
+
+## 3. Create a New Repository
+
+1. Click **+** → **New Repository**.
+2. Enter the repository title.
+3. Do **not** initialize with a README (`README.md = Off`).
+4. Create the repository.
+
+GitHub will then display the commands to connect your local project.
+
+---
+
+
+## 4. First-Time Repository Setup
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:arunyogi123/donation_platform.git
+git push -u origin main
+
+
+
+### Note:
+
+* `git init` is used **only once** when creating a new Git repository.
+* The `-u` option in `git push -u origin main` sets `origin/main` as the default upstream branch.
+
+---
+
+
+## 5. Regular Workflow After Initial Setup
+
+
+git add .
+git commit -m "your commit message"
+git push origin main
+
+
+### Example:
+
+
+git add .
+git commit -m "Added user authentication feature"
+git push origin main
+

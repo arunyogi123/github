@@ -1,0 +1,48 @@
+# Cloning an Existing GitHub Repository Using SSH
+
+## 1. Add Your SSH Key to GitHub (if not already added)
+
+1. Open **GitHub**.
+2. Go to **Settings** → **SSH and GPG Keys**.
+3. Click **New SSH Key**.
+4. Paste your public SSH key (`id_rsa.pub`) and save it.
+
+---
+
+
+## 2. Get the Repository SSH Link
+
+1. Open the repository on GitHub.
+2. Click the **Code** button.
+3. Select **SSH**.
+4. Copy the SSH URL.
+
+Example:
+git@github.com:username/repository-name.git
+
+
+---
+
+
+## 3. Clone the Repository
+
+Open **Command Prompt** and run:
+
+
+cd Downloads
+git clone <paste-the-ssh-url>
+
+
+Example:
+cd Downloads
+git clone git@github.com:arunyogi123/donation_platform.git
+
+---
+
+
+## 4. Get the Latest Changes
+
+To download the latest updates from GitHub:
+git pull origin main
+
+This command fetches and merges the latest changes from the `main` branch into your local repository.
